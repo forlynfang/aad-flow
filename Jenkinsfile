@@ -17,7 +17,7 @@ pipeline {
 
         stage('Run Python Script') {
             steps {
-                sh 'python3 get_AAD_graph_flow.py'  // 运行 Python 文件
+                sh 'python3 get_AAD_graph_flow-and-response_time.py'  // 运行 Python 文件
             }
         }
     }
