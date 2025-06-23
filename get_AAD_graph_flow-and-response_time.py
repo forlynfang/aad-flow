@@ -22,7 +22,7 @@ headers = {
     }    
 
 def get_response_time(nas_ipaddress):
-    url = f"https://10.214.3.102/admin/API/mnt/Session/IPAddress/{nas_ipaddress}"
+    url = f"https://10.204.0.10/admin/API/mnt/Session/IPAddress/{nas_ipaddress}"
     headers = {
         "Accept": "application/xml"
     }
