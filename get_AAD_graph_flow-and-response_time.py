@@ -12,8 +12,8 @@ from urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-orchestrator_host = "xxxxxxxxxxxx"
-auth_token = "xxxxxxxxxxxxxx"
+orchestrator_host = "aligntech-orch-use1.silverpeak.cloud"
+auth_token = os.environ.get('ORCH_TOKEN')
 
 url = "https://aligntech-orch-use1.silverpeak.cloud/gms/rest/flow?nePk=141.NE&ip1=10.146.30.48&mask1=32&port2=443&ipEitherFlag=false&portEitherFlag=false&protocol=tcp&dscp=any&filter=all&edgeHA=false&builtIn=false&uptime=anytime&bytes=total&duration=any&maxFlows=10000"
 headers = {
