@@ -18,7 +18,7 @@ teams_webhook_url = os.environ.get('TEAMS_WEBHOOK')
 ise_api_user = os.environ.get('ISEAPI_USERNAME')
 ise_api_pwd = os.environ.get('ISEAPI_PASSWORD')
 
-url = "https://aligntech-orch-use1.silverpeak.cloud/gms/rest/flow?nePk=141.NE&ip1=10.146.30.48&mask1=32&port2=443&ipEitherFlag=false&portEitherFlag=false&protocol=tcp&dscp=any&filter=all&edgeHA=false&builtIn=false&uptime=anytime&bytes=total&duration=any&maxFlows=10000"
+url = "https://{orchestrator_host}/gms/rest/flow?nePk=141.NE&ip1=10.146.30.48&mask1=32&port2=443&ipEitherFlag=false&portEitherFlag=false&protocol=tcp&dscp=any&filter=all&edgeHA=false&builtIn=false&uptime=anytime&bytes=total&duration=any&maxFlows=10000"
 headers = {
         "Accept": "application/json",
         "X-Auth-Token": auth_token,
