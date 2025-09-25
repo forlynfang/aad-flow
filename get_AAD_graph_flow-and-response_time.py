@@ -12,7 +12,7 @@ from urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-orchestrator_host = "aligntech-orch-use1.silverpeak.cloud"
+orchestrator_host = os.environ.get('ORCH_HOST')
 auth_token = os.environ.get('ORCH_TOKEN')
 teams_webhook_url = os.environ.get('TEAMS_WEBHOOK')
 ise_api_user = os.environ.get('ISEAPI_USERNAME')
