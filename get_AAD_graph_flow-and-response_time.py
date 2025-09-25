@@ -15,6 +15,8 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 orchestrator_host = "aligntech-orch-use1.silverpeak.cloud"
 auth_token = os.environ.get('ORCH_TOKEN')
 teams_webhook_url = os.environ.get('TEAMS_WEBHOOK')
+ise_api_user = os.environ.get('ISEAPI_USERNAME')
+ise_api_pwd = os.environ.get('ISEAPI_PASSWORD')
 
 url = "https://aligntech-orch-use1.silverpeak.cloud/gms/rest/flow?nePk=141.NE&ip1=10.146.30.48&mask1=32&port2=443&ipEitherFlag=false&portEitherFlag=false&protocol=tcp&dscp=any&filter=all&edgeHA=false&builtIn=false&uptime=anytime&bytes=total&duration=any&maxFlows=10000"
 headers = {
@@ -32,7 +34,7 @@ def get_response_time(nas_ipaddress):
         response = requests.get(
             url,
             headers=headers,
-            auth=HTTPBasicAuth("ans-api", "P@ssw0rd"),
+            auth=HTTPBasicAuth(ise_api_user, ise_api_pwd),
             verify=False,  # Disable SSL verification for testing purposes
             timeout=30  # Set a timeout for the request
         )
