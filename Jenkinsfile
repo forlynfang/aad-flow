@@ -31,6 +31,11 @@ pipeline {
                     string(
                         credentialsId: 'ORCH_HOST',
                         variable: 'ORCH_HOST' // 自定义密钥环境变量名
+                    ),
+                    usernamePassword(
+                        credentialsId: 'ISE-ANS-API',
+                        usernameVariable: 'ISEAPI_USERNAME', // 自定义用户名环境变量名
+                        passwordVariable: 'ISEAPI_PASSWORD'  // 自定义密码环境变量名
                     )
                 ]) {
                     // 在这个块内的所有步骤都可以访问到上面定义的环境变量
