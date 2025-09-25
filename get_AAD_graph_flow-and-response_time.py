@@ -14,6 +14,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 orchestrator_host = "aligntech-orch-use1.silverpeak.cloud"
 auth_token = os.environ.get('ORCH_TOKEN')
+teams_webhook_url = os.environ.get('TEAMS_WEBHOOK')
 
 url = "https://aligntech-orch-use1.silverpeak.cloud/gms/rest/flow?nePk=141.NE&ip1=10.146.30.48&mask1=32&port2=443&ipEitherFlag=false&portEitherFlag=false&protocol=tcp&dscp=any&filter=all&edgeHA=false&builtIn=false&uptime=anytime&bytes=total&duration=any&maxFlows=10000"
 headers = {
@@ -90,22 +91,9 @@ if __name__ == "__main__":
                 print("匹配项及路径：")
                 for path, value in matches:
                     print(f"路径: {path} -> 值: {value}")
-                    #teams_webhook_url = "https://aligntech.webhook.office.com/webhookb2/7ed9a6c7-e811-4e71-956c-9e54f8b7d705@9ac44c96-980a-481b-ae23-d8f56b82c605/JenkinsCI/9ecff2f044b44cfcae37b0376ecd1540/9d21b513-f4ee-4b3b-995c-7a422a087a6c/V2-0LzN76qekmVrAPO1b9pX-4MwxVsHKo7lbMnV_iHFb81"
-                    #message = {
-                    #"text": f"Message_Test: AAD graph flow is active on ZY psn node."
-                    #}                                       
-                    #try:
-                    #    teams_response = requests.post(
-                    #    teams_webhook_url,
-                    #    json=message,
-                    #    headers={"Content-Type": "application/json"}
-                    #)
-                    #    teams_response.raise_for_status()
-                    #except Exception as e:
-                    #    print(f"Failed to send alert to MS Teams for {aorchestrator_host}")                    
+                        
             else:
                 print("未找到匹配文本")
-                teams_webhook_url = "https://aligntech.webhook.office.com/webhookb2/7ed9a6c7-e811-4e71-956c-9e54f8b7d705@9ac44c96-980a-481b-ae23-d8f56b82c605/JenkinsCI/9ecff2f044b44cfcae37b0376ecd1540/9d21b513-f4ee-4b3b-995c-7a422a087a6c/V2-0LzN76qekmVrAPO1b9pX-4MwxVsHKo7lbMnV_iHFb81"
                 message = {
                 "text": f"WARNING: AAD graph flow is NOT active on ZY psn node and response time is over 30000ms，please check the wireless authentication."
                 }
